@@ -1,3 +1,5 @@
 My goal with this application is to teach you building a photo gallery using Rails 4.
 
 I used gem 'paperclip' to upload photos from my machine, and gem 'devise' for users login.
+
+{View the application on heroku}[https://samir-photo-gallery.herokuapp.com/]

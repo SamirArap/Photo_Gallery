@@ -1,0 +1,33 @@
+<header>
+	<div class="container">
+		<table>
+			<tr class="row">
+				<td class="col-sm-1"><%= link_to image_tag("ruby_rails.png", size: '60x60'), root_path %></td>
+				<td class="col-sm-6"> My photo gallery 
+					<p><% if @pictures %>
+						<%= pluralize(@pictures.size, 'title')%> find 
+						<%end%>
+					</p></td>
+
+				
+					<form class="search" role="search">
+						<%= form_tag(@picture, :method => 'get') do %>
+							
+							<td class="col-sm-4">
+								<%= text_field_tag('search', params[:search], :class => "form-control")%></td>
+							<td class="col-sm-2">
+								<%= submit_tag("Search", :class => 'btn btn-default')%>
+							</td>
+							
+						<%end%>
+				    </form> 			
+			</tr>
+		</table>
+ 
+    <p>
+    	<%= render(:partial => 'pictures/navbar')%>
+    </p>
+    <p id="notice"><%= notice %></p> 
+  </div>
+</header>  
+  

@@ -1,0 +1,44 @@
+
+<% if @picture.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@picture.errors.count, "error") %> prohibited this picture from being saved:</h2>
+
+    <ul>
+    <% @picture.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
+ <table>
+   <tr class="row">
+     <td class="col-sm-3"></td>
+     <td class="col-sm-1"><%= f.label :image %></td>
+     <td class="col-sm-4"><%= f.file_field :image, :class => "btn btn-block" %></td>
+     <td class="col-sm-4"></td>
+   </tr>
+   <tr class="row">
+     <td class="col-sm-3"></td>
+     <td class="col-sm-1"><%= f.label :title %></td>
+     <td class="col-sm-4"> <%= f.text_field :title, :class => "form-control" %></td>
+     <td class="col-sm-4"></td>
+   </tr>
+   <tr class="row">
+     <td class="col-sm-3"></td>
+     <td class="col-sm-1"><%= f.label :cycle %></td>
+     <td class="col-sm-4"><%= f.text_field :cycle, :class => "form-control" %></td>
+     <td class="col-sm-4"></td>
+   </tr>
+   <tr class="row">
+     <td class="col-sm-3"></td>
+     <td class="col-sm-1"><%= f.label :price %></td>
+     <td class="col-sm-4"><%= f.text_field :price, :class => "form-control" %></td>
+     <td class="col-sm-4"></td>   </tr>
+ </table> 
+
+    
+
+  
+

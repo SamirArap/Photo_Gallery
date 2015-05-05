@@ -1,0 +1,27 @@
+<div class="container">
+	<div class="jumbotron">
+		<h1>Editing Picture</h1>
+		
+		<%= form_for @picture do |f|%>
+			<%= render(:partial => 'form', :locals => {:f => f}) %>
+				
+				<table>
+					<tr class="row">
+						<td class="col-sm-4"></td>				
+						<td class="col-sm-4"><%= f.submit "Edit params", :class => 'btn btn-block' %></td>
+						<td class="col-sm-2"></td>
+						<td class="col-sm-2"></td>
+					</tr>
+				</table>	
+		<%end%>
+		<br>
+		
+		<div class="button">
+			<p><%= link_to 'Show', @picture, :class => 'btn btn-block' %></p>
+		</div>
+
+		<div class="button">
+			<p><%= link_to 'Back', pictures_path, :class => 'btn btn-block' %></p>
+		</div>	
+	</div>
+</div>

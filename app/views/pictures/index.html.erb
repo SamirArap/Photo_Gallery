@@ -1,0 +1,40 @@
+
+<div class="stomac">
+  <% if @pictures.any? %>
+  
+    <div class="container">
+          <% @pictures.in_groups_of(4) do |group| %>
+            <div class="row">
+              <% group.each do |picture| %>
+                <% if picture %>
+                  <div class="col-md-3">
+                    <div class="center">
+                      <%= link_to image_tag(picture.image.url, :class => "img-circle", size: "180x140"), picture %>
+                    </div>
+                    <div class="caption">
+                      <h3>Title: <strong><%= picture.title %></strong></h3>
+                      <p>Cycle: <%= picture.cycle %></p>
+                      <p>User: <%= picture.user.email %></p>
+                      <p>Price: <%= number_to_currency(picture.price, :locale => :eu) %></p>
+                      
+                      <% if picture.user == current_user %>
+                        <div class="button" >
+                          <%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-block" %>
+                        </div>
+                      <%end%>
+                    </div><br>
+                  </div>
+                <%end%>
+              <%end%>
+            </div>
+          <% end %>
+        </tbody>
+      </table>
+
+      <br>
+      
+    </div>
+  <%end%>
+</div>
+
+

@@ -1,0 +1,35 @@
+<div class="container">
+	<div class="jumbotron">
+		<div class="center">
+
+			<div class="boxx">
+				<div class="box">
+					<%= image_tag(@picture.image.url, size: '400x400') %>
+				</div>
+				<div class="box">
+					<table>
+						<tr class="row">
+							<td class="col-sm-4">Title:</td>
+							<td class="col-sm-4"><h2><%= @picture.title %></h2></td>
+						</tr>
+						<tr class="row">
+							<td class="col-sm-4">Cycle:</td>
+							<td class="col-sm-4"><h2><%= @picture.cycle %></h2></td>
+						</tr>	
+						<tr class="row">
+							<td class="col-sm-4">Price:</td>
+							<td class="col-sm-4"><h2><%= number_to_currency(@picture.price, :locale => :eu) %></h2></td>
+						</tr>
+					</table>
+				</div>	
+			</div>
+			
+			<div class="button">
+				<p><%= link_to 'Edit', edit_picture_path(@picture), :class => 'btn btn-block' %></p>
+			</div>
+			<div class="button">
+				<p><%= link_to 'Back', pictures_path, :class => 'btn btn-block' %></p>
+			</div>
+		</div>
+	</div>
+</div>

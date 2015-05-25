@@ -7,29 +7,30 @@
 					<%= image_tag(@picture.image.url, size: '400x400') %>
 				</div>
 				<div class="box">
-					<table>
-						<tr class="row">
-							<td class="col-sm-4">Title:</td>
-							<td class="col-sm-4"><h2><%= @picture.title %></h2></td>
-						</tr>
-						<tr class="row">
-							<td class="col-sm-4">Cycle:</td>
-							<td class="col-sm-4"><h2><%= @picture.cycle %></h2></td>
-						</tr>	
-						<tr class="row">
-							<td class="col-sm-4">Price:</td>
-							<td class="col-sm-4"><h2><%= number_to_currency(@picture.price, :locale => :eu) %></h2></td>
-						</tr>
-					</table>
+					<div class="row">
+						<div class="col-sm-4">Title:</div>
+						<div class="col-sm-4"><h2><%= @picture.title %></h2></div>
+					</div>
+					<div class="row">
+						<div class="col-sm-4">Cycle:</div>
+						<div class="col-sm-4"><h2><%= @picture.cycle %></h2></div>
+					</div>	
+					<div class="row">
+						<div class="col-sm-4">Price:</div>
+						<div class="col-sm-4"><h2><%= number_to_currency(@picture.price, :locale => :eu) %></h2></div>
+					</div>
 				</div>	
 			</div>
 			
-			<div class="button">
-				<p><%= link_to 'Edit', edit_picture_path(@picture), :class => 'btn btn-block' %></p>
-			</div>
+			<% if @picture.user == current_user%>
+				<div class="button">
+					<p><%= link_to 'Edit', edit_picture_path(@picture), :class => 'btn btn-block' %></p>
+				</div>
+			<%end%>
 			<div class="button">
 				<p><%= link_to 'Back', pictures_path, :class => 'btn btn-block' %></p>
 			</div>
+			
 		</div>
 	</div>
 </div>

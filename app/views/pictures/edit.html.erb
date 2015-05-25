@@ -1,18 +1,15 @@
 <div class="container">
 	<div class="jumbotron">
-		<h1>Editing Picture</h1>
+		<h2>Editing Picture</h2>
 		
 		<%= form_for @picture do |f|%>
 			<%= render(:partial => 'form', :locals => {:f => f}) %>
-				
-				<table>
-					<tr class="row">
-						<td class="col-sm-4"></td>				
-						<td class="col-sm-4"><%= f.submit "Edit params", :class => 'btn btn-block' %></td>
-						<td class="col-sm-2"></td>
-						<td class="col-sm-2"></td>
-					</tr>
-				</table>	
+				<% if @picture.user == @current_email %>
+					<div class="row">
+						<div class="col-md-2"></div>				
+						<div class="col-md-10"><%= f.submit "Edit params", :class => 'btn btn-block' %></div>
+					</div>	
+				<%end%>
 		<%end%>
 		<br>
 		

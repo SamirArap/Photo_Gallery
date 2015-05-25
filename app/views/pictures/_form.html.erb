@@ -11,32 +11,22 @@
   </div>
 <% end %>
 
-
- <table>
-   <tr class="row">
-     <td class="col-sm-3"></td>
-     <td class="col-sm-1"><%= f.label :image %></td>
-     <td class="col-sm-4"><%= f.file_field :image, :class => "btn btn-block" %></td>
-     <td class="col-sm-4"></td>
-   </tr>
-   <tr class="row">
-     <td class="col-sm-3"></td>
-     <td class="col-sm-1"><%= f.label :title %></td>
-     <td class="col-sm-4"> <%= f.text_field :title, :class => "form-control" %></td>
-     <td class="col-sm-4"></td>
-   </tr>
-   <tr class="row">
-     <td class="col-sm-3"></td>
-     <td class="col-sm-1"><%= f.label :cycle %></td>
-     <td class="col-sm-4"><%= f.text_field :cycle, :class => "form-control" %></td>
-     <td class="col-sm-4"></td>
-   </tr>
-   <tr class="row">
-     <td class="col-sm-3"></td>
-     <td class="col-sm-1"><%= f.label :price %></td>
-     <td class="col-sm-4"><%= f.text_field :price, :class => "form-control" %></td>
-     <td class="col-sm-4"></td>   </tr>
- </table> 
+   <div class="row">
+     <div class="col-md-2"><%= f.label :image %></div>
+     <div class="col-md-10"><%= f.file_field :image, :class => "btn btn-block" %></div>
+   </div>
+   <div class="row">
+     <div class="col-md-2"><%= f.label :title %></div>
+     <div class="col-md-10"> <%= f.text_field :title, :class => "form-control" %></div>
+   </div>
+   <div class="row">
+     <div class="col-md-2"><%= f.label :cycle %></div>
+     <div class="col-md-10"><%= f.text_field :cycle, :class => "form-control" %></div>
+   </div>
+   <div class="row">
+     <div class="col-md-2"><%= f.label :price %></div>
+     <div class="col-md-10"><%= f.text_field :price, :class => "form-control" %></div>
+   </div> 
 
     
 

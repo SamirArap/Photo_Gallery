@@ -13,7 +13,6 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'paperclip', '~>4.2'
 gem 'devise', '~>3.4.1'
-gem 'capistrano-rails', group: :development
 
 group :development, :test do
   gem 'debugger'
